@@ -68,13 +68,13 @@ const Testimonials = () => {
 
     return (
         <div className="py-10 dark:bg-gray-950 dark:text-white">
-            <div className="container">
+            <div className="container px-4 sm:px-0">
                 {/* header section */}
                 <div className="text-center mb-10 max-w-[600px] mx-auto">
                     <p data-aos="fade-up" className="text-sm text-primary">
                         What our customers are saying
                     </p>
-                    <h1 data-aos="fade-up" className="text-3xl font-bold">
+                    <h1 data-aos="fade-up" className="text-2xl sm:text-3xl font-bold">
                         Testimonials
                     </h1>
                     <p data-aos="fade-up" className="text-xs text-gray-400">
@@ -90,7 +90,7 @@ const Testimonials = () => {
                             <div className="my-6">
                                 <div
                                     key={data.id}
-                                    className="flex flex-col gap-4 shadow-lg py-8 px-6 mx-4 rounded-xl dark:bg-gray-800 bg-primary/10 relative"
+                                    className="flex flex-col gap-4 shadow-lg py-8 px-6 mx-2 sm:mx-4 rounded-xl dark:bg-gray-800 bg-primary/10 relative overflow-hidden"
                                 >
                                     <div className="mb-4">
                                         <img
@@ -107,7 +107,7 @@ const Testimonials = () => {
                                             </h1>
                                         </div>
                                     </div>
-                                    <p className="text-black/20 text-9xl font-serif absolute top-0 right-0">
+                                    <p className="text-black/20 text-7xl sm:text-9xl font-serif absolute top-0 right-0">
                                         ,,
                                     </p>
                                 </div>

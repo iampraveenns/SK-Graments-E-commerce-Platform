@@ -1,8 +1,10 @@
+import { useState } from 'react';
 import Logo from '../../assets/logo.png'
 import DarkMode from './DarkMode';
 import { IoMdSearch } from "react-icons/io";
 import { FaCartShopping } from "react-icons/fa6";
 import { FaCaretDown } from 'react-icons/fa6';
+import { HiMenuAlt3, HiX } from 'react-icons/hi';
 
 const Menu = [
   {
@@ -51,6 +53,8 @@ const DropdownLinks = [
 ];
 
 const Navbar = ({ handleOrderPopup }) => {
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+
   return (
     <>
       <div className="shadow-md bg-white dark:bg-gray-900 dark:text-white duration-200 relative z-40">
@@ -86,12 +90,21 @@ const Navbar = ({ handleOrderPopup }) => {
               <div>
                 <DarkMode />
               </div>
+
+              {/* Mobile Hamburger Toggle */}
+              <div onClick={() => setMobileMenuOpen(!mobileMenuOpen)} className="sm:hidden">
+                {mobileMenuOpen ? (
+                  <HiX className="text-2xl cursor-pointer" />
+                ) : (
+                  <HiMenuAlt3 className="text-2xl cursor-pointer" />
+                )}
+              </div>
             </div>
           </div>
         </div>
       </div>
       <div>
-        {/* Lower Navbar */}
+        {/* Lower Navbar - Desktop */}
         <div className='flex justify-center shadow-md dark:bg-black dark:text-white border'>
           <ul className='sm:flex gap-4 hidden items-center'>
             {Menu.map((data) => (
@@ -122,6 +135,41 @@ const Navbar = ({ handleOrderPopup }) => {
             </li>
           </ul>
         </div>
+
+        {/* Lower Navbar - Mobile Dropdown */}
+        {mobileMenuOpen && (
+          <ul className='flex flex-col sm:hidden dark:bg-black dark:text-white shadow-md'>
+            {Menu.map((data) => (
+              <li key={data.id}>
+                <a href={data.link}
+                  className='block px-6 py-3 border-b border-gray-100 dark:border-gray-800 hover:text-primary hover:bg-primary/10'>
+                  {data.name}</a>
+              </li>
+            ))}
+            {/* Trending as a plain expanded list on mobile (no hover dropdown) */}
+            <li className='px-6 py-3 border-b border-gray-100 dark:border-gray-800'>
+              <p className='font-medium mb-2'>Trending</p>
+              <ul className='flex flex-col gap-2 pl-2'>
+                {DropdownLinks.map((data) => (
+                  <li key={data.id}>
+                    <a href={data.link} className='inline-block w-full py-1 hover:text-primary'>{data.name}</a>
+                  </li>
+                ))}
+              </ul>
+            </li>
+            {/* Mobile search, since it's hidden in the upper navbar on mobile */}
+            <li className='px-6 py-3'>
+              <div className="relative w-full">
+                <input
+                  type="text"
+                  placeholder="search"
+                  className="w-full rounded-full border border-gray-300 px-2 py-1 focus:outline-none focus:border-1 focus:border-purple-500"
+                />
+                <IoMdSearch className="text-gray-500 absolute top-1/2 -translate-y-1/2 right-3 " />
+              </div>
+            </li>
+          </ul>
+        )}
       </div>
     </>
   )

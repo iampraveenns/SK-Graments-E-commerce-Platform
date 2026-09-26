@@ -55,14 +55,14 @@ const Products = () => {
         {/* Header section */}
         <div className="text-center mb-10 max-w-[600px] mx-auto ">
           <p data-aos="fade-up" className="text-primary text-sm">Top Selling Products for you</p>
-          <h1 data-aos="fade-up" className="text-3xl font-bold">Top Selling Products</h1>
+          <h1 data-aos="fade-up" className="text-2xl sm:text-3xl font-bold">Top Selling Products</h1>
           <p data-aos="fade-up" className="text-sm text-gray-400 ">
             Lorem, ipsum dolor sit amet consectetur adipisicing elit. Expedita suscipit eligendi cum.
           </p>
         </div>
         {/* Body Section */}
         <div>
-          <div className="grid grid-cols-1 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 place-items-center gap-5">
+          <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 place-items-center gap-3 sm:gap-5">
             {/* Card Section */}
             { ProductData.map((data) => (
                 <div
@@ -72,8 +72,8 @@ const Products = () => {
                 className="space-y-3"
                 >
                   <div>
-                  <img src={data.img} alt="image not found!" className="h-[220px] w-[150px] object-cover rounded-md " />
-                    <h3 className="font-semibold">{data.title}</h3>
+                  <img src={data.img} alt="image not found!" className="h-[180px] w-[130px] sm:h-[220px] sm:w-[150px] object-cover rounded-md " />
+                    <h3 className="font-semibold text-sm sm:text-base">{data.title}</h3>
                     <p className="text-sm text-gray-600">{data.color}</p>
                     <div className="flex items-center gap-1">
                       <FaStar className="text-yellow-400" />

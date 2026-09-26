@@ -41,10 +41,10 @@ const Footer = () => {
         <div style={BannerImg}
             className="text-white">
             <div className="container">
-                <div data-aos="zoom-in" className="grid grid-cols-3 pb-44 pt-5 ">
+                <div data-aos="zoom-in" className="grid grid-cols-1 sm:grid-cols-3 gap-8 sm:gap-0 pb-10 sm:pb-44 pt-5 ">
                     {/* company details */}
                     <div className="py-3 px-4">
-                        <h1 className="sm:text-3xl text-xl font-bold sm:text-left text-justify mb-3 flex items-center gap-3 w-[250px]">
+                        <h1 className="sm:text-3xl text-xl font-bold sm:text-left text-justify mb-3 flex items-center gap-3 w-full sm:w-[250px]">
                             <img src={footerlogo} alt="image not found!" className="max-w-[50px]" />
                             SK Garments
                         </h1>
@@ -53,9 +53,9 @@ const Footer = () => {
                         </p>
                     </div>
                     {/* Footer Links */}
-                    <div className="grid col-cols-2 sm:grid-cols-3 col-span-2 md:pl-10 ">
+                    <div className="grid grid-cols-2 sm:grid-cols-3 sm:col-span-2 md:pl-10 ">
                         <div>
-                            <div className="py-4 px-8">
+                            <div className="py-4 px-4 sm:px-8">
                                 <h1 className="sm:text-2xl font-bold sm:text-left text-justify "
                                 >Important Links</h1>
                                 <ul className="flex flex-col gap-3">
@@ -72,7 +72,7 @@ const Footer = () => {
                         </div>
 
                         <div>
-                            <div className="py-4 px-8">
+                            <div className="py-4 px-4 sm:px-8">
                                 <h1 className="sm:text-2xl font-bold sm:text-left   text-justify mb-3"
                                 > Links</h1>
                                 <ul className="flex flex-col gap-3">
@@ -91,7 +91,7 @@ const Footer = () => {
 
                         {/* social links */}
 
-                        <div>
+                        <div className="px-4 sm:px-0">
                             <div className="flex items-center gap-3 mt-6">
                                 <a href="#">
                                     <FaInstagram className="text-3xl" />
@@ -103,7 +103,7 @@ const Footer = () => {
                                     <FaLinkedin className="text-3xl" />
                                 </a>
                             </div>
-                            <div className="mt-6 w-[200px] flex flex-col gap-4">
+                            <div className="mt-6 w-full sm:w-[200px] flex flex-col gap-4">
                                 <div className="flex items-center gap-3">
                                     <FaLocationArrow />
                                     <p>Erode, TamilNadu</p>

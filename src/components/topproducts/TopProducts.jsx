@@ -29,26 +29,26 @@ const ProductData = [
 
 const TopProducts = ({ handleOrderPopup }) => (
     <div className="dark:bg-gray-950 dark:text-white">
-        <div>
+        <div className="container px-4 sm:px-0">
             {/* Header Section */}
             <div className="text-center mb-10 max-w-[600px] mx-auto py-4 ">
                 <p data-aos="fade-up" className="text-primary text-sm">Best Selling Products for you</p>
-                <h1 data-aos="fade-up" className="text-3xl font-bold">Best Products</h1>
+                <h1 data-aos="fade-up" className="text-2xl sm:text-3xl font-bold">Best Products</h1>
                 <p data-aos="fade-up" className="text-sm text-gray-400 ">
                     Lorem, ipsum dolor sit amet consectetur adipisicing elit. Expedita suscipit eligendi cum.
                 </p>
             </div >
             {/* Body Section */}
-            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-7 place-items-center" >
+            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 sm:gap-7 place-items-center" >
                 {ProductData.map((data) => (
                     <div
                         data-aos="zoom-out"
-                        className="rounded-2xl bg-white dark:bg-gray-800 hover:bg-black/80 dark:hover:bg-primary/70 hover:text-white relative shadow-xl duration-300 group max-w-[300px] p-4 transition-all">
+                        className="rounded-2xl bg-white dark:bg-gray-800 hover:bg-black/80 dark:hover:bg-primary/70 hover:text-white relative shadow-xl duration-300 group w-full max-w-[300px] p-4 transition-all">
 
                         {/* image section */}
                         <div>
                             <img src={data.img} alt="image not found!"
-                                className="max-w-[140px] mx-auto block transform -translate-y-20 group-hover:scale-105 duration-300 drop-shadow-md p-4 " />
+                                className="max-w-[140px] mx-auto block transform -translate-y-14 sm:-translate-y-20 group-hover:scale-105 duration-300 drop-shadow-md p-4 " />
 
                         </div>
                         {/* details section */}
